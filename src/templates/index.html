@@ -12,7 +12,7 @@
     integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
     crossorigin="anonymous"
   />
-  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=12) }}" />
+  <link rel="stylesheet" href="{{ url_for('static', filename='style.css', v=13) }}" />
 </head>
 <body>
   <div class="app-viewport container-fluid">
@@ -60,21 +60,6 @@
                 <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z" />
               </svg>
               <span class="rail-tool-label">Guide</span>
-            </button>
-
-            <button
-              type="button"
-              id="openLargeCardBtn"
-              class="rail-tool-btn"
-              title="Show fullscreen high-contrast card for hearing listener"
-            >
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <polyline points="15 3 21 3 21 9" />
-                <polyline points="9 21 3 21 3 15" />
-                <line x1="21" y1="3" x2="14" y2="10" />
-                <line x1="3" y1="21" x2="10" y2="14" />
-              </svg>
-              <span class="rail-tool-label">Card</span>
             </button>
 
             <button
@@ -246,7 +231,6 @@
                     <button type="button" id="spaceBtn" class="action-pill-btn hidden" data-action="space">Space</button>
                     <button type="button" id="undoBtn" class="action-pill-btn">Undo</button>
                     <button type="button" id="clearComposerBtn" class="action-pill-btn">Clear</button>
-                    <button type="button" id="showCardInlineBtn" class="action-pill-btn">Card</button>
                   </div>
                 </div>
               </div>
@@ -371,22 +355,6 @@
               </div>
             </div>
           </div>
-
-          <!-- Fullscreen High-Contrast Listener Display Card -->
-          <div id="largeCardModal" class="large-card-modal hidden" role="dialog" aria-modal="true" aria-label="Fullscreen Listener Card">
-            <div class="large-card-inner">
-              <div class="large-card-top">
-                <span class="mode-badge">KUMPAS LISTENER CARD</span>
-                <button type="button" id="closeLargeCardBtn" class="ref-modal-close" aria-label="Close">&times;</button>
-              </div>
-              <div id="largeCardText" class="large-card-text">Ready to communicate</div>
-              <div id="largeCardSub" class="large-card-sub"></div>
-              <div class="d-flex justify-content-center gap-3 mt-4">
-                <button type="button" id="largeCardSpeakBtn" class="action-pill-btn action-pill-primary px-4">Speak Aloud</button>
-                <button type="button" id="largeCardCloseBtn2" class="action-pill-btn px-4">Back to Chat</button>
-              </div>
-            </div>
-          </div>
         </main>
       </div>
     </div>
@@ -415,6 +383,6 @@
       hasPhraseSvm: configEl.dataset.hasPhraseSvm === "true"
     };
   </script>
-  <script src="{{ url_for('static', filename='app.js', v=12) }}"></script>
+  <script src="{{ url_for('static', filename='app.js', v=13) }}"></script>
 </body>
 </html>

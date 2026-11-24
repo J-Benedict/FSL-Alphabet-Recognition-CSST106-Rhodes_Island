@@ -10,8 +10,6 @@
   const modePhraseBtn = document.getElementById("modePhraseBtn");
   const modeSpellBtn = document.getElementById("modeSpellBtn");
   const openSignGuideBtn = document.getElementById("openSignGuideBtn");
-  const openLargeCardBtn = document.getElementById("openLargeCardBtn");
-  const showCardInlineBtn = document.getElementById("showCardInlineBtn");
   const langToggleBtn = document.getElementById("langToggleBtn");
   const langBadgeText = document.getElementById("langBadgeText");
 
@@ -75,13 +73,6 @@
   const refNextBtn = document.getElementById("refNextBtn");
   const refSampleThumbs = Array.from(document.querySelectorAll(".ref-sample-thumb"));
   const cheatTiles = Array.from(document.querySelectorAll(".cheat-tile"));
-
-  const largeCardModal = document.getElementById("largeCardModal");
-  const largeCardText = document.getElementById("largeCardText");
-  const largeCardSub = document.getElementById("largeCardSub");
-  const closeLargeCardBtn = document.getElementById("closeLargeCardBtn");
-  const largeCardCloseBtn2 = document.getElementById("largeCardCloseBtn2");
-  const largeCardSpeakBtn = document.getElementById("largeCardSpeakBtn");
 
   const captureCanvas = document.createElement("canvas");
   captureCanvas.width = 640;
@@ -675,13 +666,6 @@
     if (found) showGuideSignDetail(found);
   }
 
-  function openLargeCard(mainText, subText) {
-    const activeTxt = mainText || (activeLang === "fil" ? latestComposer.formatted_fil : latestComposer.formatted_en);
-    largeCardText.textContent = (activeTxt && activeTxt.trim()) ? activeTxt : "Ready to communicate";
-    largeCardSub.textContent = subText || (activeLang === "fil" ? "Filipino Output" : "English Output");
-    largeCardModal.classList.remove("hidden");
-  }
-
   // Event Wiring
   modePhraseBtn.addEventListener("click", () => setMode("phrase"));
   modeSpellBtn.addEventListener("click", () => setMode("alphabet"));
@@ -771,13 +755,6 @@
   refModalBackdrop.addEventListener("click", () => refModal.classList.add("hidden"));
   refPrevBtn.addEventListener("click", () => openRefModal(currentRefIdx - 1));
   refNextBtn.addEventListener("click", () => openRefModal(currentRefIdx + 1));
-
-  // Large Card Modal
-  openLargeCardBtn.addEventListener("click", () => openLargeCard());
-  showCardInlineBtn.addEventListener("click", () => openLargeCard());
-  closeLargeCardBtn.addEventListener("click", () => largeCardModal.classList.add("hidden"));
-  largeCardCloseBtn2.addEventListener("click", () => largeCardModal.classList.add("hidden"));
-  largeCardSpeakBtn.addEventListener("click", () => speakText(largeCardText.textContent));
 
   cameraSelect.addEventListener("change", () => {
     if (running) { stopCamera(); startCamera(); }

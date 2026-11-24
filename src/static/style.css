@@ -1078,49 +1078,6 @@ body {
   cursor: pointer;
 }
 
-/* Fullscreen Listener Display Card */
-.large-card-modal {
-  position: fixed;
-  inset: 0;
-  z-index: 999;
-  background: rgba(11, 11, 11, 0.92);
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-
-.large-card-inner {
-  width: min(980px, 100%);
-  background: var(--yellow);
-  color: var(--black);
-  border-radius: 28px;
-  padding: 28px 36px;
-  box-shadow: 0 30px 90px rgba(0, 0, 0, 0.5);
-  text-align: center;
-}
-
-.large-card-top {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  margin-bottom: 24px;
-}
-
-.large-card-text {
-  font-size: clamp(2rem, 5.5vw, 4.2rem);
-  font-weight: 900;
-  line-height: 1.15;
-  word-break: break-word;
-}
-
-.large-card-sub {
-  font-size: clamp(1rem, 2vw, 1.4rem);
-  font-weight: 600;
-  opacity: 0.8;
-  margin-top: 14px;
-}
-
 @media (max-width: 1100px) {
   .main-layout-row { flex-wrap: wrap; }
   .left-rail { width: 100%; flex: 1 1 100%; }

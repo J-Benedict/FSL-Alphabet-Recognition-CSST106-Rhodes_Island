@@ -74,7 +74,7 @@ MIN_DETECTION_CONFIDENCE = 0.5
 MIN_TRACKING_CONFIDENCE = 0.5
 
 # Post-Processing & Word Formation
-CONFIDENCE_THRESHOLD = 0.75  # tau
+CONFIDENCE_THRESHOLD = 0.35  # tau (matches PHRASE_CONFIDENCE_THRESHOLD)
 SMOOTHING_WINDOW = 10        # frames for sliding-window majority vote
 DWELL_TIME_SECONDS = 1.0     # steady hold duration before confirming a letter
 SPACE_PAUSE_SECONDS = 2.0    # optional neutral/no-hand pause to insert space

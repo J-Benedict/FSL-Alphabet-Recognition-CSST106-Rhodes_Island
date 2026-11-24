@@ -16,7 +16,7 @@ import cv2
 import numpy as np
 
 from src.predictor import ModelPredictor
-from src.config import CAMERA_HEIGHT, CAMERA_WIDTH, TARGET_FPS
+from src.config import CAMERA_HEIGHT, CAMERA_WIDTH, CONFIDENCE_THRESHOLD, TARGET_FPS
 from src.features import (
     HandLandmarkExtractor,
     HolisticLandmarkExtractor,
@@ -90,7 +90,7 @@ def render(
     if state.raw_label is not None:
         active = state.smoothed_label or state.raw_label
         msg = f"Pred: {active} ({state.raw_confidence * 100:.1f}%)"
-        color = (56, 189, 248) if state.raw_confidence >= 0.75 else (0, 165, 255)
+        color = (56, 189, 248) if state.raw_confidence >= CONFIDENCE_THRESHOLD else (0, 165, 255)
     else:
         msg = "No hand detected"
         color = (0, 165, 255)

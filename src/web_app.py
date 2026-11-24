@@ -52,6 +52,7 @@ app = Flask(
     template_folder=str(BASE_DIR / "templates"),
     static_folder=str(BASE_DIR / "static"),
 )
+app.config["TEMPLATES_AUTO_RELOAD"] = True
 
 _lock = threading.Lock()
 _predictor = ModelPredictor()
